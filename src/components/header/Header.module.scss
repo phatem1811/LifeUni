@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 70px;
+  img {
+    margin-left: 16px;
+    height: 70px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    text-align: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00acc1;
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    gap: 40px;
+    margin-right: 24px;
+    color: #00acc1;
+    .btn {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 14px;
+    }
+    .btn-expert {
+      background-color: #00acc1;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+    }
+    .btn-student {
+      background-color: #ffffff;
+      color: #00acc1;
+      border: 2px solid #00acc1;
+      border-radius: 6px;
+    }
+  }
+  .menu ul li {
+    cursor: pointer;
+    padding-bottom: 5px;
+    position: relative;
+  }
+
+  .menu ul li.active {
+    color: #00acc1;
+    font-weight: bold;
+    border-bottom: 3px solid #00acc1;
+  }
+}

@@ -1,0 +1,36 @@
+.slider {
+  background-color: #00acc1;
+  height: 560px;
+  .content {
+    ul {
+      list-style-type: none;
+
+      li {
+        padding-left: 60px;
+        color: white;
+        width: 40%;
+        padding-top: 50px;
+        &:first-child {
+          font-size: 64px;
+          font-weight: bold;
+        }
+        &:nth-child(2) {
+          font-size: 15px;
+        }
+        &:last-child {
+          .btn {
+            background-color: white;
+            color: #00acc1;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 14px;
+            width: 200px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}
