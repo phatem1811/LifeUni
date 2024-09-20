@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaCartShopping } from "react-icons/fa6";
 import { AiOutlineGlobal } from "react-icons/ai";
 import styles from "./Header.module.scss";
-import logo from "../../assets/images/logo.jpeg";
+import logo from "../../assets/images/logo.jpg";
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState("Trang chủ");

@@ -1,9 +1,15 @@
 .header {
+  position: fixed;
+  top: -6px;
   display: flex;
+  padding: 16px 0;
+  width: 100%;
+  background-color: #ffffff;
   text-decoration: none;
   justify-content: space-between;
-  margin-top: 10px;
   height: 70px;
+  margin-top: 0px;
+
   img {
     margin-left: 16px;
     height: 70px;
