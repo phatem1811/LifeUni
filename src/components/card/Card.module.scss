@@ -1,11 +1,12 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 0 120px;
+  margin: 0 100px;
   margin-bottom: 40px;
   .content {
     display: flex;
     justify-content: space-between;
+
     .left {
       p {
         font-size: 32px;
@@ -13,11 +14,13 @@
         color: #00acc1;
       }
     }
+
     .right {
       font-size: 24px;
       display: flex;
       align-items: center;
       gap: 16px;
+
       .icon {
         font-size: 28px;
         margin-top: 6px;
@@ -26,23 +29,31 @@
   }
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
     margin-top: 20px;
 
     .item {
-      margin: 0 auto;
-      width: 300px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
       height: 370px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(0, 0, 0, 0.8);
+      background-color: #f3f4f9;
+      overflow: hidden;
       border-radius: 16px;
       text-align: center;
       display: flex;
       flex-direction: column;
       gap: 2px;
       text-align: left;
+
+      &:hover {
+        .img {
+          transform: scale(1.1);
+        }
+        .title {
+          color: #00acc1;
+        }
+      }
+
       .img {
         max-width: 100%;
         border-top-left-radius: 13px;
@@ -50,31 +61,37 @@
         height: 180px;
         object-fit: cover;
       }
+
       .course {
         margin-left: 12px;
-        p {
+
+        .title {
           font-size: 22px;
           font-weight: bold;
           margin-top: 16px;
           margin-bottom: 4px;
         }
+
         .info {
           margin: 2px 0;
+
           p {
             font-size: 14px;
             line-height: 1.2;
             margin: 4px 0;
             font-weight: normal;
           }
-          top: -24px;
         }
+
         .footer {
           display: flex;
           justify-content: space-between;
           align-items: center;
+
           .cost {
             display: flex;
             gap: 8px;
+
             span:first-child {
               font-size: 20px;
               font-weight: bold;
@@ -87,6 +104,7 @@
               margin-top: 2px;
             }
           }
+
           p {
             font-size: 13px;
             font-weight: normal;

@@ -1,10 +1,12 @@
-import { Grid } from "@mantine/core";
 import React, { useState } from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import styles from "./Card.module.scss";
 import image from "../../assets/images/courseimage.png";
 import { FaRegStar } from "react-icons/fa";
-import { IoIosArrowForward } from "react-icons/io";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { PrevArrow, NextArrow } from "../Arrow";
 
 const Card = () => {
   const [items, setItems] = useState([
@@ -44,13 +46,52 @@ const Card = () => {
       originalPrice: "580,000 đ",
       students: 2,
     },
+    {
+      title: "Khóa học React Native TypeScript New 2024",
+      author: "Vinh Phat",
+      duration: "05:32",
+      lessons: 5,
+      price: "551,000 đ",
+      originalPrice: "580,000 đ",
+      students: 2,
+    },
   ]);
+  const [showPrevArrow, setShowPrevArrow] = useState(false);
+  const [showNextArrow, setShowNextArrow] = useState(true);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    prevArrow: showPrevArrow ? <PrevArrow /> : null,
+    nextArrow: showNextArrow ? <NextArrow /> : null,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    afterChange: (current) => {
+      setShowPrevArrow(current > 0);
+      setShowNextArrow(current < items.length - 4);
+    },
+  };
 
   return (
     <div className={styles.card}>
       <div className={styles.content}>
         <div className={styles.left}>
-          <p>Những kinh nghiệm mới nhất</p>
+          <p>Những khóa học nổi bật</p>
         </div>
         <div className={styles.right}>
           <p>Xem thêm </p>
@@ -59,32 +100,32 @@ const Card = () => {
       </div>
 
       <div className={styles.container}>
-        {items.map((item, index) => (
-          <div className={styles.item} key={index}>
-            <img className={styles.img} src={image} alt="" />
-            <div className={styles.course}>
-              <p>{item.title}</p>
-              <div className={styles.info}>
-                <p>By {item.author}</p>
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <FaRegStar />
-                <p>
-                  Thời gian {item.duration} - {item.lessons} Bài giảng
-                </p>
-              </div>
-              <div className={styles.footer}>
-                <div className={styles.cost}>
-                  <span>{item.price}</span>
-                  <span>{item.originalPrice}</span>
+        <Slider {...settings}>
+          {items.map((item, index) => (
+            <div className={styles.item} key={index}>
+              <img className={styles.img} src={image} alt={item.title} />
+              <div className={styles.course}>
+                <p className={styles.title}>{item.title}</p>
+                <div className={styles.info}>
+                  <p>By {item.author}</p>
+                  {[...Array(5)].map((_, starIndex) => (
+                    <FaRegStar key={starIndex} />
+                  ))}
+                  <p>
+                    Thời gian {item.duration} - {item.lessons} Bài giảng
+                  </p>
                 </div>
-                <p>{item.students} đã học</p>
+                <div className={styles.footer}>
+                  <div className={styles.cost}>
+                    <span>{item.price}</span>
+                    <span>{item.originalPrice}</span>
+                  </div>
+                  <p>{item.students} đã học</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
     </div>
   );
