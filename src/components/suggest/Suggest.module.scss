@@ -15,7 +15,7 @@
 
     border-bottom: 1px solid #c9e9ed;
     box-shadow: 0 -2px 15px 0 rgba(0, 172, 193, 0.25);
-    width: 380px !important;
+    width: 90% !important;
 
     display: flex;
     flex-direction: column;
@@ -39,7 +39,8 @@
       }
 
       p {
-        width: 350px;
+        
+        width: 100%; 
         font-size: 16px;
         color: #00acc1;
         margin-bottom: 20px;
@@ -49,6 +50,8 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       .btn {

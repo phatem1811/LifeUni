@@ -1,5 +1,5 @@
 .reviewSection {
-  padding: 0px 120px;
+  padding: 0px 20px;
   max-width: 1240px;
   margin: 0 auto;
   font-family: SFPro, sans-serif;
@@ -15,7 +15,7 @@
 
     border-bottom: 1px solid #c9e9ed;
     box-shadow: 0 -2px 15px 0 rgba(0, 172, 193, 0.25);
-    width: 380px !important;
+    width: 90% !important;
 
     display: flex;
     flex-direction: column;
@@ -41,8 +41,7 @@
       margin: 0 20px;
       position: relative;
 
-      //justify-content: center;
-      //justify-items: center;
+
 
       img {
         width: 50px;

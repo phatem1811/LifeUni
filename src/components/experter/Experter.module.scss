@@ -7,30 +7,28 @@
     font-size: 32px;
     font-weight: bold;
     color: #00acc1;
-
-    //text-align: center;
+    text-align: center; 
   }
 
   .gridItem {
     background-color: #f9f9f9;
     border-radius: 10px;
-
     border-bottom: 1px solid #c9e9ed;
     box-shadow: 0 -2px 15px 0 rgba(0, 172, 193, 0.25);
-    //width: 380px !important;
-
-    width: 90% !important; 
-    margin: 0 auto; 
+    width: 90% !important;
+    margin: 20px auto; 
 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
+
+
     img {
       width: 180px;
       height: 180px;
-      margin-left: 110px;
+      margin: 50px auto;
       border: 4px solid #00acc1;
       border-radius: 50%;
       margin-bottom: 10px;
@@ -40,7 +38,7 @@
       margin-top: 50px;
       font-size: 16px;
       color: #00acc1;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     p {
@@ -61,53 +59,81 @@
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 1024px) {
   .container {
     h2 {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00acc1;
+      font-size: 28px; 
     }
 
     .gridItem {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      width: 390px !important;
-      margin: 10px 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      text-align: center;
+      width: 80% !important; 
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    h2 {
+      font-size: 24px; 
+    }
+
+    .gridItem {
+      width: 90% !important; 
+      margin: 10px auto; 
+
+      img {
+        width: 150px; 
+        height: 150px;
+        margin-top: 20px; 
+      }
+
+      h3 {
+        font-size: 14px; 
+        margin-top: 30px; 
+      }
+
+      p {
+        &:first-of-type {
+          font-size: 16px;
+        }
+
+        &:last-of-type {
+          font-size: 14px; 
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    h2 {
+      font-size: 20px; 
+    }
+
+    .gridItem {
+      margin: 10px 0; 
 
       img {
         width: 120px;
         height: 120px;
-        margin-left: 70px;
-        margin-top: 20px;
-        border-radius: 50%;
-        margin-bottom: 0;
+        margin-left: 20 auto; 
+        margin-top: 15px; 
       }
 
       h3 {
-        font-size: 14px;
-        color: #00acc1;
-        margin-bottom: 0;
-        margin-top: 40px;
+        font-size: 12px; 
+        margin-top: 30px; 
       }
 
       p {
-        margin-top: 2px;
-        margin-bottom: 4px;
-
         &:first-of-type {
-          font-size: 16px;
-          font-weight: bold;
+          font-size: 14px; 
         }
 
         &:last-of-type {
-          font-size: 14px;
-          margin-top: 30px;
-          padding-bottom: 20px;
+          font-size: 12px; 
+          margin-top: 20px; 
         }
       }
     }

@@ -29,6 +29,8 @@ const Suggest = () => {
     },
   ]);
 
+
+
   const settings = {
     dots: false,
     infinite: true,
@@ -45,9 +47,18 @@ const Suggest = () => {
         },
       },
       {
-        breakpoint: 600 ,
+        breakpoint: 750,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1.5 ,
+          centerMode: true,
+          centerPadding: '0px',
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+
         },
       },
     ],

@@ -12,8 +12,8 @@ const Expert = () => {
         </div>
 
         <div className={styles.content}>
-          <p>Trở thành chuyên gia</p>
-          <p>
+          <p className={styles.title}>Trở thành chuyên gia</p>
+          <p className={styles.script}>
             Lorem Ipsum has been the industry s standard dummy text ever since
             the 1500s, when an unknown printer took a galley of type and
             scrambled it to make a type specimen book
