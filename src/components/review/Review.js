@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Review.module.scss";
 import image from "../../assets/images/avatar.avif";
+import { NextArrow, PrevArrow } from "../Arrow";
+import Slider from "react-slick";
 
 const Review = () => {
   const [items, setItems] = useState([
@@ -25,14 +27,59 @@ const Review = () => {
       course: "Khóa học The Python Programming",
       avatar: image,
     },
+    {
+      content:
+        "Trang web cung cấp thông tin đa dạng và chi tiết, giúp người dùng dễ dàng tìm kiếm và tiếp cận thông tin một cách ",
+      author: "Lê Văn Sơn",
+      course: "Khóa học Next.js 14 & React",
+      avatar: image,
+    },
+    {
+      content:
+        "Trang web cung cấp thông tin đa dạng và chi tiết, giúp người dùng dễ dàng tìm kiếm và tiếp cận thông tin một cách ",
+      author: "Lê Văn Khoa",
+      course: "Khóa học Next.js 14 & React",
+      avatar: image,
+    },
   ]);
+
+  const [showPrevArrow, setShowPrevArrow] = useState(false);
+  const [showNextArrow, setShowNextArrow] = useState(true);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: showPrevArrow ? <PrevArrow /> : null,
+    nextArrow: showNextArrow ? <NextArrow /> : null,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+    afterChange: (current) => {
+      setShowPrevArrow(current > 0);
+      setShowNextArrow(current < items.length - 3);
+    },
+  };
 
   return (
     <div className={styles.reviewSection}>
       <h2>Học viên nói gì về chúng tôi ?</h2>
-      <div className={styles.reviewContainer}>
+      <Slider {...settings}>
         {items.map((item, index) => (
-          <div className={styles.reviewCard} key={index}>
+          <div className={styles.gridItem} key={index}>
             <p className={styles.reviewContent}>{item.content}</p>
             <div className={styles.reviewFooter}>
               <img
@@ -47,7 +94,7 @@ const Review = () => {
             </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };

@@ -21,6 +21,8 @@ const PrevArrow = (props) => {
           position: "relative",
           top: "-40px",
           right: "6px",
+          background : "#fff",
+          zIndex: 10,
         }}
         size={40}
       />
@@ -47,7 +49,9 @@ const NextArrow = (props) => {
           borderRadius: "50%",
           position: "relative",
           top: "-40px",
-          right: "20px",
+          right: "60px",
+          background : "#fff",
+          zIndex: 10,
         }}
         size={40}
       />

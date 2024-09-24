@@ -1,65 +1,83 @@
 .reviewSection {
-  padding: 40px 120px;
+  padding: 0px 120px;
+  max-width: 1240px;
+  margin: 0 auto;
+  font-family: SFPro, sans-serif;
   h2 {
     font-size: 32px;
     font-weight: bold;
     color: #00acc1;
   }
-}
 
-.reviewContainer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding-bottom: 20px;
-}
+  .gridItem {
+    background-color: #f9f9f9;
+    border-radius: 10px;
 
-.reviewCard {
-  background-color: #f9fafb;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 360px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .reviewContent {
-    font-size: 18px;
-    margin-bottom: 20px;
-    height: 315px;
-    text-align: left;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 13;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-  }
-  .reviewFooter {
+    border-bottom: 1px solid #c9e9ed;
+    box-shadow: 0 -2px 15px 0 rgba(0, 172, 193, 0.25);
+    width: 380px !important;
+
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    text-align: left;
 
-    .avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 20px;
+    .reviewContent {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5em;
+      margin-bottom: 20px;
+      padding: 0 20px;
+      height: 270px;
+      text-align: left;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 10;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
     }
 
-    .authorInfo {
-      text-align: left;
-      .authorName {
-        font-size: 18px;
-        font-weight: bold;
-        color: #00acc1;
-        margin-bottom: 2px;
+    .reviewFooter {
+      display: flex;
+      margin: 0 20px;
+      position: relative;
+
+      //justify-content: center;
+      //justify-items: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 10px;
       }
 
-      .courseName {
-        margin-top: 0px;
-        font-size: 16px;
+      .authorInfo {
+        margin-left: 20px;
+        margin-bottom: -20px;
         color: #00acc1;
-        font-weight: bold;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        
+        .authorName {
+          margin-top: 0px;
+          font-size: 22px;
+          font-weight: 400;
+          margin-bottom: 0px;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 1;
+        }
+        .courseName {
+          margin-top: 4px;
+          font-size: 18px;
+          font-weight: 400;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 1;
+        }
       }
     }
   }

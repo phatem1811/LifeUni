@@ -7,7 +7,7 @@
   background-color: #ffffff;
   text-decoration: none;
   justify-content: space-between;
-  height: 70px;
+  height: 60px;
   margin-top: 0px;
   z-index: 1000;
 
@@ -15,7 +15,7 @@
     margin-left: 16px;
     height: 70px;
   }
-  ul {
+  .menu ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -29,6 +29,19 @@
     font-weight: bold;
     color: #00acc1;
   }
+
+  .menu ul li {
+    cursor: pointer;
+    padding-bottom: 5px;
+    position: relative;
+  }
+
+  .menu ul li.active {
+    color: #00acc1;
+    font-weight: bold;
+    border-bottom: 3px solid #00acc1;
+  }
+
   .action {
     display: flex;
     align-items: center;
@@ -51,19 +64,64 @@
     .btn-student {
       background-color: #ffffff;
       color: #00acc1;
-      border: 2px solid #00acc1;
-      border-radius: 6px;
+      border: 1px solid #00acc1;
+      border-radius: 4px;
+      width: 160px;
     }
-  }
-  .menu ul li {
-    cursor: pointer;
-    padding-bottom: 5px;
-    position: relative;
-  }
+    .cart {
+      position: relative;
+      font-size: 24px;
+      color: rgb(156, 156, 156);
 
-  .menu ul li.active {
-    color: #00acc1;
-    font-weight: bold;
-    border-bottom: 3px solid #00acc1;
+      .cartBadge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #d9d9d9;
+        color: #00acc1;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 10px;
+      }
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      border: 1px solid #d3dce6;
+      border-radius: 30px;
+      padding: 3px 6px;
+      width: fit-content;
+      width: 170px;
+      transition: width 0.3s ease;
+
+      &:focus-within {
+        width: 600px;
+      }
+
+      .searchIcon {
+        font-size: 32px;
+        color: #00acc1;
+        margin-right: 8px;
+      }
+      .searchInput {
+        border: none;
+        outline: none;
+        padding-left: 5px;
+        font-size: 14px;
+        color: #707070;
+        width: 100%;
+        height: 20px;
+
+        &::placeholder {
+          color: #707070;
+        }
+      }
+    }
+
+    .searchInput.active {
+      width: 300px;
+      opacity: 1;
+    }
   }
 }
