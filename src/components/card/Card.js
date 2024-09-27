@@ -69,7 +69,7 @@ const Card = () => {
     nextArrow: showNextArrow ? <NextArrow /> : null,
     responsive: [
       {
-        breakpoint: 1500,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 3,
         },
@@ -84,6 +84,8 @@ const Card = () => {
         breakpoint: 800,
         settings: {
           slidesToShow: 1.5,
+          centerMode: false,
+          infinite: false,
         },
       },
       {

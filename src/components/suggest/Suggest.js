@@ -50,7 +50,9 @@ const Suggest = () => {
         breakpoint: 750,
         settings: {
           slidesToShow: 1.5 ,
-          centerMode: true,
+          
+          centerMode: false,
+          infinite: false,
           centerPadding: '0px',
         },
       },

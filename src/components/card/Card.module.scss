@@ -35,7 +35,8 @@
       cursor: pointer;
       width: 100%;
       max-width: 300px;
-      height: 370px;
+      height: auto;
+      width: 90% !important;
       background-color: #f3f4f9;
       overflow: hidden;
       border-radius: 16px;
